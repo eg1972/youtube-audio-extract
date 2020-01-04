@@ -25,7 +25,8 @@ parser = argparse.ArgumentParser(formatter_class=argparse.RawTextHelpFormatter,
 parser.add_argument('url', action='store', default='https://www.youtube.com/watch?v=ZTdOMV-yTRg', help='URL of the video (default: https://www.youtube.com/watch?v=ZTdOMV-yTRg).')
 parser.add_argument('artist', action='store', default='Marillion', help='Artist of the song (default: Marillion)')
 parser.add_argument('title', action='store', default='Lavender', help='Title of the song (default: Lavender)')
-parser.add_argument('--workpath', action='store', default='/home/'+os.getlogin()+'/Musik/', help='Storage location (default: Musik-sub-dir in home-dir; must exist !)')
+#parser.add_argument('--workpath', action='store', default='/home/'+os.getlogin()+'/Musik/', help='Storage location (default: Musik-sub-dir in home-dir; must exist !)')
+parser.add_argument('--workpath', action='store', help='Storage location (default: Musik-sub-dir in home-dir; must exist !)')
 args = parser.parse_args()
 if os.path.isdir(args.workpath):
   print('workpath exists.')
@@ -35,13 +36,6 @@ else:
 
 mp3final = args.artist+'_'+args.title+'.mp3'
 mp3path =  args.workpath+'/'+mp3final
-
-#arguments = sys.argv[1:]
-#argcount = len(arguments)
-#program_name = sys.argv[0]
-#ydl_url = sys.argv[1]
-#ARTIST = sys.argv[2]
-#TITLE = sys.argv[3]
 
 class MyLogger(object):
     def debug(self, msg):
