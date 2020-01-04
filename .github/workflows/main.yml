@@ -3,7 +3,7 @@ name: python app
 on: [push]
 
 jobs:
-  build:
+  test:
 
     runs-on: ubuntu-latest
 
@@ -23,11 +23,6 @@ jobs:
         python -m pip install --upgrade pip
         pip install youtube_dl
         pip install mutagen
-    - name: some more printouts
-      run: |
-        #find / -name youtube_dl
-        python --version
-        pip --version        
     - name: Test the app
       run: |
         export PYTHONPATH=/opt/hostedtoolcache/Python/3.7.5/x64/lib/python3.7/site-packages
