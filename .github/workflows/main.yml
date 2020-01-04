@@ -13,8 +13,9 @@ jobs:
       run: echo Hello, world!
     - name: Run a multi-line script
       run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
+        echo "current directory: "
+        pwd
+        ls -l
     - name: Set up Python 3.7
       uses: actions/setup-python@v1
       with:
