@@ -25,9 +25,9 @@ jobs:
         pip install mutagen
     - name: some more printouts
       run: |
+        find / -name youtube_dl
         python --version
         pip --version
-        find . -name "youtube_dl*"
         
 #    - name: Test the app
 #      run: |
