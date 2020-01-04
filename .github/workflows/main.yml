@@ -20,7 +20,9 @@ jobs:
         python-version: 3.7
     - name: Install youtube_dl and mutagen
       run: |
+        python --version
         python -m pip install --upgrade pip
+        pip --version
         pip install youtube_dl
         pip install mutagen
     - name: Test the app
