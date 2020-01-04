@@ -23,12 +23,10 @@ jobs:
         python -m pip install --upgrade pip
         pip install youtube_dl
         pip install mutagen
-        #sudo apt-get -y install ffmpeg
     - name: install ffmpeg
-      uses: mstksg/get-package@v1
-      with:
-        #brew: brewdep1 brewdep2
-        apt-get: ffmpeg
+      run: |
+        sudo apt-get update
+        sudo apt-get -y install ffmpeg
     - name: Test the app
       run: |
         export PYTHONPATH=/opt/hostedtoolcache/Python/3.7.5/x64/lib/python3.7/site-packages
