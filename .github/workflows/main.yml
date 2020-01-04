@@ -25,6 +25,7 @@ jobs:
         pip --version
         pip install youtube_dl
         pip install mutagen
-    - name: Test the app
-      run: |
-        ./youtube-audio-extract.py --workpath . https://www.youtube.com/watch?v=ZTdOMV-yTRg Marillion Lavender
+        find . -name "youtube_dl*"
+#    - name: Test the app
+#      run: |
+#        ./youtube-audio-extract.py --workpath . https://www.youtube.com/watch?v=ZTdOMV-yTRg Marillion Lavender
