@@ -3,6 +3,7 @@
 ## Prerequisites
 To run this script, install the following modules:
 ```
+apt-get -y install ffmpeg
 pip3 install youtube_dl
 pip3 install mutagen
 ```
