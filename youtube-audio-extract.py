@@ -13,7 +13,6 @@
 from __future__ import unicode_literals
 import youtube_dl
 import os
-import sys
 import glob
 import  mutagen
 from mutagen.easyid3 import EasyID3
@@ -21,17 +20,17 @@ import argparse
 
 parser = argparse.ArgumentParser(formatter_class=argparse.RawTextHelpFormatter,
                                  description="Extract audio from a youtube video.",
-                                 epilog="Example:\nyoutube-audio-extract.py https://www.youtube.com/watch?v=ZTdOMV-yTRg Marillion Lavender")
+                                 epilog="Example:\nyoutube-audio-extract.py --workpath /home/eddgest/Music https://www.youtube.com/watch?v=ZTdOMV-yTRg Marillion Lavender")
 parser.add_argument('url', action='store', default='https://www.youtube.com/watch?v=ZTdOMV-yTRg', help='URL of the video (default: https://www.youtube.com/watch?v=ZTdOMV-yTRg).')
 parser.add_argument('artist', action='store', default='Marillion', help='Artist of the song (default: Marillion)')
 parser.add_argument('title', action='store', default='Lavender', help='Title of the song (default: Lavender)')
-#parser.add_argument('--workpath', action='store', default='/home/'+os.getlogin()+'/Musik/', help='Storage location (default: Musik-sub-dir in home-dir; must exist !)')
-parser.add_argument('--workpath', action='store', help='Storage location (default: Musik-sub-dir in home-dir; must exist !)')
+parser.add_argument('--workpath', action='store', default=os.path.expanduser('~')+'/Musik/', help='Storage location (default: Musik-sub-dir in home-dir; must exist !)')
+#parser.add_argument('--workpath', action='store', default=os.path.expanduser('~')+'/Music/', help='Storage location (default: Music-sub-dir in home-dir; must exist !)')
 args = parser.parse_args()
 if os.path.isdir(args.workpath):
   print('workpath exists.')
 else:
-  print('No place found to store the file. Consider using the optional --workpath <path> argument.')
+  print('No place found to store the file (' + args.workpath + '). Consider using the optional --workpath <path> argument.')
   quit()
 
 mp3final = args.artist+'_'+args.title+'.mp3'

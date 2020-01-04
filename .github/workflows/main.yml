@@ -9,25 +9,27 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: Run a multi-line script
+    - name: Print some stuff in a multiline script
       run: |
         echo "current directory: "
         pwd
         ls -l
-    - name: Set up Python 3.7
+        echo "home directory: $HOME"
+    - name: Set up Python 3.7 using a pre-defined action
       uses: actions/setup-python@v1
       with:
         python-version: 3.7
-    - name: Install youtube_dl and mutagen
+    - name: Install pip, youtube_dl and mutagen
       run: |
         python -m pip install --upgrade pip
         pip install youtube_dl
         pip install mutagen
-    - name: install ffmpeg
+    - name: install ffmpeg using apt-get
       run: |
         sudo apt-get update
         sudo apt-get -y install ffmpeg
-    - name: Test the app
+    - name: Test the script
       run: |
+        echo "Adding the runner's python-module-path before calling the script"
         export PYTHONPATH=/opt/hostedtoolcache/Python/3.7.5/x64/lib/python3.7/site-packages
         ./youtube-audio-extract.py --workpath . https://www.youtube.com/watch?v=ZTdOMV-yTRg Marillion Lavender
