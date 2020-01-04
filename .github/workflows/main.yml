@@ -25,7 +25,7 @@ jobs:
         pip install mutagen
         #sudo apt-get -y install ffmpeg
     - name: install ffmpeg
-      use: mstksg/get-package@v1
+      uses: mstksg/get-package@v1
       with:
         #brew: brewdep1 brewdep2
         apt-get: ffmpeg
