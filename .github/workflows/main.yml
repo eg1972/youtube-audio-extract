@@ -20,12 +20,15 @@ jobs:
         python-version: 3.7
     - name: Install youtube_dl and mutagen
       run: |
-        python --version
         python -m pip install --upgrade pip
-        pip --version
         pip install youtube_dl
-        find . -name "youtube_dl*"
         pip install mutagen
+    - name: some more printouts
+      run: |
+        python --version
+        pip --version
+        find . -name "youtube_dl*"
+        
 #    - name: Test the app
 #      run: |
 #        ./youtube-audio-extract.py --workpath . https://www.youtube.com/watch?v=ZTdOMV-yTRg Marillion Lavender
