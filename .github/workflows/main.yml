@@ -25,10 +25,10 @@ jobs:
         pip install mutagen
     - name: some more printouts
       run: |
-        find / -name youtube_dl
+        #find / -name youtube_dl
         python --version
-        pip --version
-        
-#    - name: Test the app
-#      run: |
-#        ./youtube-audio-extract.py --workpath . https://www.youtube.com/watch?v=ZTdOMV-yTRg Marillion Lavender
+        pip --version        
+    - name: Test the app
+      run: |
+        export PYTHONPATH=/opt/hostedtoolcache/Python/3.7.5/x64/lib/python3.7/site-packages/youtube_dl:/opt/hostedtoolcache/Python/3.7.5/x64/lib/python3.7/site-packages/mutagen
+        ./youtube-audio-extract.py --workpath . https://www.youtube.com/watch?v=ZTdOMV-yTRg Marillion Lavender
