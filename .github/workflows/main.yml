@@ -38,3 +38,4 @@ jobs:
         echo "Running the script for testing..."
         ./youtube-audio-extract.py --help
         ./youtube-audio-extract.py --workpath . https://www.youtube.com/watch?v=ZTdOMV-yTRg Marillion Lavender
+        find . -name Marillion_Lavender.mp3
