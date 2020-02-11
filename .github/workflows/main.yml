@@ -32,4 +32,5 @@ jobs:
       run: |
         echo "Adding the runner's python-module-path before calling the script"
         export PYTHONPATH=/opt/hostedtoolcache/Python/3.7.5/x64/lib/python3.7/site-packages
+        echo "Running the script for testing..."
         ./youtube-audio-extract.py --workpath . https://www.youtube.com/watch?v=jd0nSN90Hgk Marillion Easter
