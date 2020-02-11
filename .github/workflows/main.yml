@@ -19,11 +19,17 @@ jobs:
       uses: actions/setup-python@v1
       with:
         python-version: 3.7
-    - name: Install pip, youtube_dl and mutagen
+    - name: Install pip
       run: |
         python -m pip install --upgrade pip
+    - name: Install youtube_dl
+      run: |
         pip install youtube_dl
+    - name: Install mutagen
+      run: |
         pip install mutagen
+    - name: Check for youtube_dl
+      run: |
         find . -name "youtube_dl*"
     - name: install ffmpeg using apt-get
       run: |
