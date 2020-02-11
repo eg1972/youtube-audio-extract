@@ -19,16 +19,12 @@ jobs:
       uses: actions/setup-python@v1
       with:
         python-version: 3.7
-    - name: Install pip
+    - name: Install pip, youtube_dl and mutagen
       run: |
         python -m pip install --upgrade pip
-    - name: Install youtube_dl
-      run: |
         pip install youtube_dl
-    - name: Install mutagen
-      run: |
         pip install mutagen
-    - name: Check for youtube_dl
+    - name: Check for youtube_dl - if the test fails update the PYTHONPATH below
       run: |
         find . -name "youtube_dl*"
     - name: install ffmpeg using apt-get
@@ -38,7 +34,7 @@ jobs:
     - name: Test the script
       run: |
         echo "Adding the runner's python-module-path before calling the script"
-        export PYTHONPATH=/opt/hostedtoolcache/Python/3.7.5/x64/lib/python3.7/site-packages
+        export PYTHONPATH=/opt/hostedtoolcache/Python/3.7.6/x64/lib/python3.7/site-packages
         echo "Running the script for testing..."
         ./youtube-audio-extract.py --help
         ./youtube-audio-extract.py --workpath . https://www.youtube.com/watch?v=jd0nSN90Hgk Marillion Easter
