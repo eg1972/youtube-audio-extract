@@ -8,7 +8,7 @@ pip3 install youtube_dl
 pip3 install mutagen
 ```
 
-## Test Locally
+## Test Locallyly
 ```
 ./youtube-audio-extract.py --workpath . https://www.youtube.com/watch?v=ZTdOMV-yTRg Marillion Lavender
 ```
