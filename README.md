@@ -35,7 +35,6 @@ pip3 install mutagen
    git push origin master 
    ```
 5. Observe Actions: [Actions](https://github.com/eg1972/youtube-audio-extract/actions)
-   - click reload until the upper most action shows "running"
-   - open the different stages in separate tabs
-=======
->>>>>>> be5749e9a819b1f0d5ae36c8a8aaf1b1a61d2741
+   - click reload until the upper most action shows a yellow button
+   - open the job in a different tab
+   - click on "test-script" in the left frame

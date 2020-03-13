@@ -3,7 +3,7 @@ name: python app
 on: [push]
 
 jobs:
-  test:
+  test-script:
 
     runs-on: ubuntu-latest
 
