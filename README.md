@@ -8,7 +8,7 @@ pip3 install youtube_dl
 pip3 install mutagen
 ```
 
-## Test Locally
+## Test Locallyly
 ```
 ./youtube-audio-extract.py --workpath . https://www.youtube.com/watch?v=ZTdOMV-yTRg Marillion Lavender
 ```
@@ -18,6 +18,7 @@ pip3 install mutagen
 - click "Actions" in the top bar
 - if a new commit is pushed, execution will start automatically
 - click the job name "test" to follow the execution
+<<<<<<< HEAD
 
 ## Workflow documentation
 [Workflow syntax for GitHub Actions](https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions)
@@ -36,3 +37,5 @@ pip3 install mutagen
 5. Observe Actions: [Actions](https://github.com/eg1972/youtube-audio-extract/actions)
    - click reload until the upper most action shows "running"
    - open the different stages in separate tabs
+=======
+>>>>>>> be5749e9a819b1f0d5ae36c8a8aaf1b1a61d2741
