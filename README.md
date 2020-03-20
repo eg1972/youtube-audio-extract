@@ -1,5 +1,7 @@
 # youtube-audio-extract
 
+update: only allow songs from Marillion
+
 ## Prerequisites
 To run this script, install the following modules:
 ```
